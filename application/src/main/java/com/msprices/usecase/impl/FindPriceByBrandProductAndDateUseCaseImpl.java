@@ -26,7 +26,7 @@ public class FindPriceByBrandProductAndDateUseCaseImpl implements FindPriceByBra
                 .brandId(price.getBrand().getBrandId())
                 .dateApp(productDate.toString())
                 .fee(price.getPriceList())
-                .productId(price.getId())
+                .productId(price.getProductId())
                 .price(price.getValue())
                 .build();
     }
