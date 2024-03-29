@@ -31,7 +31,7 @@ public class PriceJpaAdapter implements PricesPersistencePort {
     private Price buildPrice(PriceEntity priceEntity){
         return Price.builder()
                 .id(priceEntity.getId())
-                .price(priceEntity.getPrice())
+                .value(priceEntity.getPrice())
                 .priceList(priceEntity.getPriceList())
                 .curr(priceEntity.getCurr())
                 .endDate(priceEntity.getEndDate())

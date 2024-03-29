@@ -1,16 +1,24 @@
 package com.msprices.model.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
+
 @Getter
 @Setter
+@Builder(toBuilder = true)
+@AllArgsConstructor
+@NoArgsConstructor
 public class GetPriceByDateRequest {
+    @NotNull(message = "Date cannot be null")
     @DateTimeFormat(pattern = "yyyy-MM-dd-HH.mm.ss")
     @JsonFormat(pattern = "yyyy-MM-dd-HH.mm.ss")
     private LocalDateTime date;
@@ -21,3 +29,4 @@ public class GetPriceByDateRequest {
     @Min(value = 1,message = "must be greater than or equal to 1")
     private Long idBrand;
 }
+
